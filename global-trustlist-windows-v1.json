@@ -1,0 +1,114 @@
+{
+  "entries": [
+    {
+      "entries": [
+        {
+          "field": "event.category",
+          "operator": "included",
+          "type": "exact_cased",
+          "value": "file"
+        },
+        {
+          "field": "file.path",
+          "operator": "included",
+          "type": "regex_caseless",
+          "value": ".*\\\\data\\\\indices\\\\.*\\\\[0-9]+\\\\index\\\\.*"
+        },
+        {
+          "field": "process.name",
+          "operator": "included",
+          "type": "exact_caseless",
+          "value": "java.exe"
+        }
+      ],
+      "type": "simple"
+    },
+    {
+      "entries": [
+        {
+          "field": "event.category",
+          "operator": "included",
+          "type": "exact_cased",
+          "value": "file"
+        },
+        {
+          "field": "file.path",
+          "operator": "included",
+          "type": "regex_caseless",
+          "value": ".*\\\\elasticsearch.*\\\\data\\\\nodes\\\\[0-9]+\\\\_state\\\\.*"
+        },
+        {
+          "field": "process.name",
+          "operator": "included",
+          "type": "exact_caseless",
+          "value": "java.exe"
+        }
+      ],
+      "type": "simple"
+    },
+    {
+      "entries": [
+        {
+          "field": "event.category",
+          "operator": "included",
+          "type": "exact_cased",
+          "value": "file"
+        },
+        {
+          "field": "file.path",
+          "operator": "included",
+          "type": "regex_caseless",
+          "value": ".*\\\\elasticsearch\\\\data\\\\nodes\\\\[0-9]+\\\\indices\\\\.*\\\\[0-9]+\\\\index\\\\.*"
+        },
+        {
+          "field": "process.name",
+          "operator": "included",
+          "type": "exact_caseless",
+          "value": "java.exe"
+        }
+      ],
+      "type": "simple"
+    },
+    {
+      "entries": [
+        {
+          "field": "event.category",
+          "operator": "included",
+          "type": "exact_cased",
+          "value": "file"
+        },
+        {
+          "field": "process.executable",
+          "operator": "included",
+          "type": "regex_caseless",
+          "value": "^c:\\\\windows\\\\winsxs\\\\.*?\\\\tiworker\\.exe$"
+        },
+        {
+          "field": "process.name",
+          "operator": "included",
+          "type": "exact_caseless",
+          "value": "tiworker.exe"
+        },
+        {
+          "entries": [
+            {
+              "field": "status",
+              "operator": "included",
+              "type": "exact_cased",
+              "value": "trusted"
+            },
+            {
+              "field": "subject_name",
+              "operator": "included",
+              "type": "exact_cased",
+              "value": "Microsoft Windows"
+            }
+          ],
+          "field": "process.Ext.code_signature",
+          "type": "nested"
+        }
+      ],
+      "type": "simple"
+    }
+  ]
+}
